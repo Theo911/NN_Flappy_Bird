@@ -94,11 +94,17 @@ class Agent():
         """
         if os.path.exists(self.MODEL_FILE):
             try:
-                checkpoint = torch.load(self.MODEL_FILE)
+                # Map the checkpoint to the correct device (CPU or GPU)
+                checkpoint = torch.load(self.MODEL_FILE, map_location=torch.device(device))
+
+                # Load the model state
                 policy_dqn.load_state_dict(checkpoint['model'])
+
+                # Load additional state info
                 self.best_reward = checkpoint['best_reward']
                 self.epsilon = checkpoint['epsilon']
 
+                # Load optimizer state (if available)
                 if checkpoint['optimizer'] is not None and self.optimizer:
                     self.optimizer.load_state_dict(checkpoint['optimizer'])
                 print(f"Loaded agent state from {self.MODEL_FILE}")
@@ -153,7 +159,9 @@ class Agent():
                 print("Starting fresh training session with new model.")
 
         else:
-            policy_dqn.load_state_dict(torch.load(self.MODEL_FILE))
+            # policy_dqn.load_state_dict(torch.load(self.MODEL_FILE))
+            checkpoint = torch.load(self.MODEL_FILE, map_location=torch.device(device))
+            policy_dqn.load_state_dict(checkpoint['model'])
             policy_dqn.eval()
 
         def save_and_exit(signal, frame):
