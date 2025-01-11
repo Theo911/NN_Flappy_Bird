@@ -37,7 +37,7 @@ All hyperparameters are loaded from a YAML configuration file. The key parameter
 - Enable Dueling DQN: True.
 
 ## Experimentation
-Training the agent took approximately 14 hours, and the highest score achieved during the training process was 1250. The training involved running multiple episodes with the FlappyBird-v0 environment. The agent's performance gradually improved as the epsilon value decayed, encouraging more exploitation over time. The best-performing model was saved based on the highest reward obtained during the training sessions.
+Training the agent took approximately 14 hours, and the highest score achieved during the training process was 1674. The training involved running multiple episodes with the FlappyBird-v0 environment. The agent's performance gradually improved as the epsilon value decayed, encouraging more exploitation over time. The best-performing model was saved based on the highest reward obtained during the training sessions.
 Throughout the experimentation phase, various hyperparameters such as the learning rate, epsilon decay rate, and network architecture were adjusted to find the optimal configuration. This iterative process of fine-tuning hyperparameters contributed significantly to enhancing the agent’s performance.
 
 ## Observations and Challenges
