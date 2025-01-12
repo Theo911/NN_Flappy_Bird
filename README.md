@@ -43,12 +43,12 @@ Throughout the experimentation phase, various hyperparameters such as the learni
 ### Experiment 1: Baseline DQN
 Objective: Establish a baseline using simple hyperparameters.
 Configuration:
-Replay Memory Size: 50,000
-Mini-batch Size: 32
-Learning Rate: 0.0001
-Epsilon Decay Rate: 0.9999
-Minimum Epsilon: 0.1
-Discount Factor (𝛾): 0.95
+- Replay Memory Size: 50,000
+- Mini-batch Size: 32
+- Learning Rate: 0.0001
+- Epsilon Decay Rate: 0.9999
+- Minimum Epsilon: 0.1
+- Discount Factor (𝛾): 0.95
 Result:
 Highest Score Achieved: 684
 Observations:
@@ -58,12 +58,12 @@ The agent was inconsistent in passing obstacles due to limited exploration.
 ### Experiment 2: Extended Replay Memory
 Objective: Evaluate the impact of a larger replay memory on training performance.
 Configuration:
-Replay Memory Size: 100,000
-Mini-batch Size: 64
-Learning Rate: 0.0001
-Epsilon Decay Rate: 0.99995
-Minimum Epsilon: 0.05
-Discount Factor (𝛾): 0.99
+- Replay Memory Size: 100,000
+- Mini-batch Size: 64
+- Learning Rate: 0.0001
+- Epsilon Decay Rate: 0.99995
+- Minimum Epsilon: 0.05
+- Discount Factor (𝛾): 0.99
 Result:
 Highest Score Achieved: 1124
 Observations:
@@ -73,13 +73,13 @@ Slower epsilon decay allowed the agent to explore more actions in early episodes
 ### Experiment 3: Dueling DQN
 Objective: Test the dueling DQN architecture for better state-action separation.
 Configuration:
-Replay Memory Size: 100,000
-Mini-batch Size: 64
-Learning Rate: 0.0001
-Epsilon Decay Rate: 0.99995
-Minimum Epsilon: 0.05
-Discount Factor (𝛾): 0.99
-Dueling DQN Enabled: True
+- Replay Memory Size: 100,000
+- Mini-batch Size: 64
+- Learning Rate: 0.0001
+- Epsilon Decay Rate: 0.99995
+- Minimum Epsilon: 0.05
+- Discount Factor (𝛾): 0.99
+- Dueling DQN Enabled: True
 Result:
 Highest Score Achieved: 1423
 Observations:
@@ -89,13 +89,13 @@ The model was better at distinguishing between "important" and "non-important" s
 ### Experiment 4: Double DQN
 Objective: Mitigate overestimation bias by incorporating Double DQN.
 Configuration:
-Replay Memory Size: 100,000
-Mini-batch Size: 64
-Learning Rate: 0.00005
-Epsilon Decay Rate: 0.99995
-Minimum Epsilon: 0.05
-Discount Factor (𝛾): 0.99
-Double DQN Enabled: True
+- Replay Memory Size: 100,000
+- Mini-batch Size: 64
+- Learning Rate: 0.00005
+- Epsilon Decay Rate: 0.99995
+- Minimum Epsilon: 0.05
+- Discount Factor (𝛾): 0.99
+- Double DQN Enabled: True
 Result:
 Highest Score Achieved: 1674
 Observations:
