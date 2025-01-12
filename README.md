@@ -41,7 +41,9 @@ Training the agent took approximately 14 hours, and the highest score achieved d
 Throughout the experimentation phase, various hyperparameters such as the learning rate, epsilon decay rate, and network architecture were adjusted to find the optimal configuration. This iterative process of fine-tuning hyperparameters contributed significantly to enhancing the agent’s performance.
 
 ### Experiment 1: Baseline DQN
+
 Objective: Establish a baseline using simple hyperparameters.
+
 Configuration:
 - Replay Memory Size: 50,000
 - Mini-batch Size: 32
@@ -49,14 +51,18 @@ Configuration:
 - Epsilon Decay Rate: 0.9999
 - Minimum Epsilon: 0.1
 - Discount Factor (𝛾): 0.95
+
 Result:
-Highest Score Achieved: 684
+- Highest Score Achieved: 684
+
 Observations:
-Epsilon decayed too quickly, leading to early exploitation.
-The agent was inconsistent in passing obstacles due to limited exploration.
+- Epsilon decayed too quickly, leading to early exploitation.
+- The agent was inconsistent in passing obstacles due to limited exploration.
 
 ### Experiment 2: Extended Replay Memory
+
 Objective: Evaluate the impact of a larger replay memory on training performance.
+
 Configuration:
 - Replay Memory Size: 100,000
 - Mini-batch Size: 64
@@ -64,14 +70,18 @@ Configuration:
 - Epsilon Decay Rate: 0.99995
 - Minimum Epsilon: 0.05
 - Discount Factor (𝛾): 0.99
+
 Result:
-Highest Score Achieved: 1124
+- Highest Score Achieved: 1124
+
 Observations:
-Improved performance with increased diversity in the replay memory.
-Slower epsilon decay allowed the agent to explore more actions in early episodes.
+- Improved performance with increased diversity in the replay memory.
+- Slower epsilon decay allowed the agent to explore more actions in early episodes.
 
 ### Experiment 3: Dueling DQN
+
 Objective: Test the dueling DQN architecture for better state-action separation.
+
 Configuration:
 - Replay Memory Size: 100,000
 - Mini-batch Size: 64
@@ -80,14 +90,18 @@ Configuration:
 - Minimum Epsilon: 0.05
 - Discount Factor (𝛾): 0.99
 - Dueling DQN Enabled: True
+
 Result:
-Highest Score Achieved: 1423
+- Highest Score Achieved: 1423
+
 Observations:
-The dueling architecture provided more stable training and faster convergence.
-The model was better at distinguishing between "important" and "non-important" states.
+- The dueling architecture provided more stable training and faster convergence.
+- The model was better at distinguishing between "important" and "non-important" states.
 
 ### Experiment 4: Double DQN
+
 Objective: Mitigate overestimation bias by incorporating Double DQN.
+
 Configuration:
 - Replay Memory Size: 100,000
 - Mini-batch Size: 64
@@ -96,11 +110,13 @@ Configuration:
 - Minimum Epsilon: 0.05
 - Discount Factor (𝛾): 0.99
 - Double DQN Enabled: True
+
 Result:
-Highest Score Achieved: 1674
+- Highest Score Achieved: 1674
+
 Observations:
-Double DQN significantly reduced overestimation of Q-values.
-Consistent performance with fewer episodes where the agent failed early.
+- Double DQN significantly reduced overestimation of Q-values.
+- Consistent performance with fewer episodes where the agent failed early.
 
 
 ## Observations and Challenges
