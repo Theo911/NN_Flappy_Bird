@@ -112,7 +112,7 @@ Configuration:
 - Double DQN Enabled: True
 
 Result:
-- Highest Score Achieved: 1674
+- Highest Score Achieved: 1675
 
 Observations:
 - Double DQN significantly reduced overestimation of Q-values.
