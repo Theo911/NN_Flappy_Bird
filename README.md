@@ -40,7 +40,7 @@ All hyperparameters are loaded from a YAML configuration file. The key parameter
 Training the agent took approximately 14 hours, and the highest score achieved during the training process was 1674. The training involved running multiple episodes with the FlappyBird-v0 environment. The agent's performance gradually improved as the epsilon value decayed, encouraging more exploitation over time. The best-performing model was saved based on the highest reward obtained during the training sessions.
 Throughout the experimentation phase, various hyperparameters such as the learning rate, epsilon decay rate, and network architecture were adjusted to find the optimal configuration. This iterative process of fine-tuning hyperparameters contributed significantly to enhancing the agent’s performance.
 
-# Experiment 1: Baseline DQN
+### Experiment 1: Baseline DQN
 Objective: Establish a baseline using simple hyperparameters.
 Configuration:
 Replay Memory Size: 50,000
@@ -55,7 +55,7 @@ Observations:
 Epsilon decayed too quickly, leading to early exploitation.
 The agent was inconsistent in passing obstacles due to limited exploration.
 
-# Experiment 2: Extended Replay Memory
+### Experiment 2: Extended Replay Memory
 Objective: Evaluate the impact of a larger replay memory on training performance.
 Configuration:
 Replay Memory Size: 100,000
@@ -70,7 +70,7 @@ Observations:
 Improved performance with increased diversity in the replay memory.
 Slower epsilon decay allowed the agent to explore more actions in early episodes.
 
-# Experiment 3: Dueling DQN
+### Experiment 3: Dueling DQN
 Objective: Test the dueling DQN architecture for better state-action separation.
 Configuration:
 Replay Memory Size: 100,000
@@ -86,7 +86,7 @@ Observations:
 The dueling architecture provided more stable training and faster convergence.
 The model was better at distinguishing between "important" and "non-important" states.
 
-# Experiment 4: Double DQN
+### Experiment 4: Double DQN
 Objective: Mitigate overestimation bias by incorporating Double DQN.
 Configuration:
 Replay Memory Size: 100,000
